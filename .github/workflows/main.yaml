@@ -1,0 +1,16 @@
+---
+
+name: "Auto Feature Branch PR"
+on:
+  push:
+    branches:
+      - 'test*'
+jobs:
+  open_pr:
+    runs-on: macos-10.15
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          chmod +x ./scripts/open_pr.sh
+          ./scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REF_NAME}
+        shell: bash
