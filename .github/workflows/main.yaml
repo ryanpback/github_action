@@ -2,7 +2,7 @@
 
 name: "Auto Feature Branch PR"
 on:
-  pull_request:
+  push:
     branches:
       - 'test*'
 jobs:
