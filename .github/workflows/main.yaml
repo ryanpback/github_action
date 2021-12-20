@@ -9,5 +9,8 @@ jobs:
   open_pr:
     runs-on: macos-10.15
     steps:
+      - uses: actions/checkout@v2
       - run: |
-          "./scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REF}"
+          chmod +x ./scripts/open_pr.sh
+          ./scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REF}
+        shell: bash
