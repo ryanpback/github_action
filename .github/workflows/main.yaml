@@ -10,4 +10,4 @@ jobs:
     runs-on: macos-10.15
     steps:
       - run: |
-          "./.github/workflows/scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REF}"
+          "./scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REF}"
