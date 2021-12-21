@@ -2,7 +2,8 @@
 
 name: "Create Release Branch to DMZ Pull Request"
 on:
-  push:
+  pull_request:
+  # push:
     branches:
       - 'test*'
 jobs:
@@ -13,4 +14,4 @@ jobs:
       - run: |
           chmod +x ./scripts/open_pr.sh
           ./.github/scripts/open_pr.rb ${GITHUB_API_URL} ${GITHUB_REF_NAME}
-        shell: ruby
+        shell: ruby {0}
