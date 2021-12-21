@@ -14,7 +14,7 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-$(curl -s -I \
+curl -s -I \
   -o /dev/null \
   -w "%{http_code}%" \
   -X POST \
@@ -27,8 +27,8 @@ $(curl -s -I \
     "base": "main",
     "title": "Merge '"$BRANCH"' into DMZ",
     "draft: "true"
-  }' \
-)
+  }'
+
 
 # echo "Response Code: $RESPONSE_CODE"
 
