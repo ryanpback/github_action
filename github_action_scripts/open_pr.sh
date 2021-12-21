@@ -29,6 +29,8 @@ RESPONSE_CODE=$(curl -s -I \
     "draft: "true"
   }')
 
+echo "Response Code: $RESPONSE_CODE"
+
 if [ "$RESPONSE_CODE" = "201" ]; then
   exit 0
 fi
