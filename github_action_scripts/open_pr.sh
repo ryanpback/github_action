@@ -14,6 +14,10 @@ BRANCH=$3
 TOKEN=$4
 
 curl \
+  -s
+  -o /dev/null
+  -I
+  -w "%{http_code}"
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
@@ -26,4 +30,8 @@ curl \
     "draft: "true"
   }'
 
-echo $?
+if [ "$?" = "201" ]; then
+  exit 0
+fi
+
+exit 1
