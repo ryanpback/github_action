@@ -14,7 +14,7 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-CURL=(curl -s -I \
+$(curl -s -I \
   -o /dev/null \
   -w "%{http_code}%" \
   -X POST \
@@ -29,8 +29,6 @@ CURL=(curl -s -I \
     "draft: "true"
   }' \
 )
-
-eval $CURL
 
 # echo "Response Code: $RESPONSE_CODE"
 
