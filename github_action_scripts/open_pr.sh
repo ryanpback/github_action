@@ -25,6 +25,6 @@ curl \
     "head": "'"$BRANCH"'",
     "base": "main",
     "title": "Merge '"$BRANCH"' into DMZ",
-    "draft: "true"
+    "draft": "true"
   }'
 
