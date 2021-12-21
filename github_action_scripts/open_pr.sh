@@ -16,8 +16,6 @@ echo $GITHUB_API
 echo $REPO
 echo $BRANCH
 
-exit 0
-
 curl \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
