@@ -14,7 +14,7 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-RESPONSE_CODE=$(curl -s -I \
+echo $(curl -s -I \
   -o /dev/null \
   -w "%{http_code}%" \
   -X POST \
@@ -30,11 +30,11 @@ RESPONSE_CODE=$(curl -s -I \
   }' \
 )
 
-echo "Response Code: $RESPONSE_CODE"
+# echo "Response Code: $RESPONSE_CODE"
 
-if [ "$RESPONSE_CODE" = "201" ]; then
-  exit 0
-fi
+# if [ "$RESPONSE_CODE" = "201" ]; then
+#   exit 0
+# fi
 
 echo "Something went wrong creating the pull request. Create a pull request from $BRANCH into DMZ."
 
