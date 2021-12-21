@@ -14,5 +14,4 @@ jobs:
       - run: |
           chmod +x ./github_action_scripts/open_pr.sh
           ./github_action_scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REPOSITORY} ${GITHUB_REF_NAME} ${{secrets.GITHUB_TOKEN}}
-
         shell: bash
