@@ -1,10 +1,11 @@
 #!/bin/bash
 
-if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]; then
+if [ -z $1 ] || [ -z $2 ] || [ -z $3 ] || [ -z $4 ]; then
   echo "This script requires the following args - in order"
   echo -e "\t1.) Github API URL\n" \
           "\t2.) Github Repository\n" \
-          "\t3.) Branch name for pull request into dmz"
+          "\t3.) Branch name for pull request into dmz" \
+          "\t4.) Github OAuth Token"
   exit 1
 fi
 
@@ -13,7 +14,7 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-status=$(curl -s -I \
+RESPONSE_CODE=$(curl -s -I \
   -o /dev/null \
   -w "%{http_code}" \
   -X POST \
@@ -28,8 +29,7 @@ status=$(curl -s -I \
     "draft: "true"
   }')
 
-echo $status
-if [ "$status" = "201" ]; then
+if [ "$RESPONSE_CODE" = "201" ]; then
   exit 0
 fi
 
