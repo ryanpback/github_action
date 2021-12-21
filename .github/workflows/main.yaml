@@ -13,6 +13,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           chmod +x ./github_action_scripts/open_pr.sh
-          ./github_action_scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REPOSITORY} ${GITHUB_REF_NAME}
+          ./github_action_scripts/open_pr.sh ${GITHUB_API_URL} ${GITHUB_REPOSITORY} ${GITHUB_REF_NAME} ${{secrets.GITHUB_TOKEN}} ${GITHUB_ACTOR}
 
         shell: bash

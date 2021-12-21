@@ -11,14 +11,18 @@ fi
 GITHUB_API=$1
 REPO=$2
 BRANCH=$3
+TOKEN=$4
+USER=$5
 
-echo $GITHUB_API
-echo $REPO
-echo $BRANCH
+# echo $GITHUB_API
+# echo $REPO
+# echo $BRANCH
+# echo $TOKEN
 
 curl \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
+  -H "authorization: Bearer $TOKEN"
   "${GITHUB_API}/repos/${REPO}/pulls" \
   -d '{"head": "${BRANCH}", "base": "dmz"}'
 
