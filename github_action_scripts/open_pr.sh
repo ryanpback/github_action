@@ -28,6 +28,8 @@ curl -s -I \
     "draft: "true"
   }'
 
+echo $?
+
 if [ "$?" = "201" ]; then
   exit 0
 fi
