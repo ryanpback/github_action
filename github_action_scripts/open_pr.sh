@@ -27,7 +27,7 @@ RESPONSE_CODE=$(curl -s -I \
     "base": "main",
     "title": "Merge '"$BRANCH"' into DMZ",
     "draft: "true"
-  }'
+  }' \
 )
 
 echo "Response Code: $RESPONSE_CODE"
