@@ -30,7 +30,7 @@ CURL=(curl -s -I \
   }' \
 )
 
-echo $(eval curl)
+echo $(eval $CURL)
 
 # echo "Response Code: $RESPONSE_CODE"
 
