@@ -28,7 +28,7 @@ status=$(curl -s -I \
     "draft: "true"
   }')
 
-
+echo $status
 if [ "$status" = "201" ]; then
   exit 0
 fi
