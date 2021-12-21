@@ -16,7 +16,7 @@ TOKEN=$4
 
 RESPONSE_CODE=$(curl -s -I \
   -o /dev/null \
-  -w "%{http_code}" \
+  -w "%{http_code}%" \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
