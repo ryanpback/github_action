@@ -21,3 +21,5 @@ curl \
   -H "Accept: application/vnd.github.v3+json" \
   "${GITHUB_API}/repos/${REPO}/pulls" \
   -d '{"head": "${BRANCH}", "base": "dmz"}'
+
+echo $?
