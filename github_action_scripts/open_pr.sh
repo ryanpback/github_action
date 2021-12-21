@@ -13,11 +13,9 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-curl \
-  -s
-  -o /dev/null
-  -I
-  -w "%{http_code}"
+curl -s -I \
+  -o /dev/null \
+  -w "%{http_code}" \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
