@@ -27,7 +27,7 @@ curl \
   {
     "head": "'"$BRANCH"'",
     "base": "main",
-    "title": "Merge "'"$BRANCH"'" into DMZ"
+    "title": "Merge "'"$BRANCH"' into DMZ"
   }'
 
 echo $?
