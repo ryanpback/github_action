@@ -23,6 +23,6 @@ curl \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
   "${GITHUB_API}/repos/${REPO}/pulls" \
-  -d "{'head': '$BRANCH', 'base': 'main'}"
+  -d \''{"head": "'"$BRANCH"'", "base": "main"}'\'
 
 echo $?
