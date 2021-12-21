@@ -23,13 +23,10 @@ curl \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
   "${GITHUB_API}/repos/${REPO}/pulls" \
-  -d \
-  '
-  {
-    "head": "${{ BRANCH }}",
+  -d '{
+    "head": "'"$BRANCH"'",
     "base": "main",
-    "title": "Merge ${{ BRANCH }} into DMZ"
-  }
-  '
+    "title": "Merge "'"$BRANCH"'" into DMZ"
+  }'
 
 echo $?
