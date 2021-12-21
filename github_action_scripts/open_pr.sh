@@ -15,7 +15,9 @@ TOKEN=$4
 
 echo -e "\nCreating Pull Request from $BRANCH into DMZ"
 
-curl \
+RESPONSE_CODE=$(curl -s -I \
+  -o /dev/null \
+  -w "%{http_code}%" \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
@@ -27,4 +29,6 @@ curl \
     "title": "Merge '"$BRANCH"' into DMZ",
     "draft": "true"
   }'
+)
 
+echo "RESPONSE CODE: $RESPONSE_CODE"
