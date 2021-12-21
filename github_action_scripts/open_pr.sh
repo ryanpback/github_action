@@ -13,11 +13,6 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-echo $GITHUB_API
-echo $REPO
-echo $BRANCH
-echo $TOKEN
-
 curl \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
@@ -27,7 +22,8 @@ curl \
   '{
     "head": "'"$BRANCH"'",
     "base": "main",
-    "title": "Merge '"$BRANCH"' into DMZ"
+    "title": "Merge '"$BRANCH"' into DMZ",
+    "draft: true
   }'
 
 echo $?
