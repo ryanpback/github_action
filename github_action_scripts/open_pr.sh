@@ -25,8 +25,7 @@ curl -s -I \
   '{
     "head": "'"$BRANCH"'",
     "base": "main",
-    "title": "Merge '"$BRANCH"' into DMZ",
-    "draft: "true"
+    "title": "Merge '"$BRANCH"' into DMZ"
   }'
 
 
