@@ -12,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          chmod +x ./scripts/open_pr.sh
+          chmod +x ./.github/scripts/open_pr.rb
           ./.github/scripts/open_pr.rb ${GITHUB_API_URL} ${GITHUB_REF_NAME}
         shell: ruby {0}
