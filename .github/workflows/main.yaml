@@ -2,8 +2,8 @@
 
 name: "Create Release Branch to DMZ Pull Request"
 on:
-  # pull_request:
-  push:
+  pull_request:
+  # push:
     branches:
       - 'test*'
 jobs:
