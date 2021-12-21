@@ -13,7 +13,7 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-curl -s -I \
+status=$(curl -s -I \
   -o /dev/null \
   -w "%{http_code}" \
   -X POST \
@@ -26,11 +26,10 @@ curl -s -I \
     "base": "main",
     "title": "Merge '"$BRANCH"' into DMZ",
     "draft: "true"
-  }'
+  }')
 
-echo $?
 
-if [ "$?" = "201" ]; then
+if [ "$status" = "201" ]; then
   exit 0
 fi
 
