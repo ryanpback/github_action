@@ -21,7 +21,7 @@ RESPONSE_CODE=$(curl -s -i \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
-  "${GITHUB_API}/repos/${REPO}/pulls" \
+  "$GITHUB_API/repos/$REPO/pulls" \
   -d \
   '{
     "head": "'"$BRANCH"'",
@@ -39,6 +39,14 @@ if [ "$RESPONSE_CODE" = "201" ]; then
 fi
 
 if [ "$RESPONSE_CODE" = "422" ]; then
+  PULLS=$(curl \
+    -H "Accept: application/vnd.github.v3+json" \
+    -H "authorization: Bearer $TOKEN" \
+    "$GITHUB_API/$REPO/pulls?head=$BRANCH&base=dmz" \
+    | jq
+  )
+
+  echo $PULLS
   echo "A pull request from $BRANCH into DMZ already exists."
   exit 0
 fi
