@@ -13,12 +13,12 @@ jobs:
       - name: Check out branch
       - uses: actions/checkout@v2
       - name: Update apt-get & install jq
-      - run: |
+        run: |
           sudo apt-get update
           sudo apt-get install jq
       - name: Ensure script is executable
-      - run: chmod +x ./github_action_scripts/open_pr.sh
+        run: chmod +x ./github_action_scripts/open_pr.sh
       - name: Create Pull Request
-      - run: ./github_action_scripts/open_pr.sh \
+        run: ./github_action_scripts/open_pr.sh \
              ${GITHUB_API_URL} ${GITHUB_REPOSITORY} ${GITHUB_REF_NAME} ${{secrets.GITHUB_TOKEN}}
         shell: bash
