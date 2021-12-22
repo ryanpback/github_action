@@ -15,7 +15,7 @@ TOKEN=$4
 
 echo -e "\nCreating Pull Request from $BRANCH into DMZ\n"
 
-curl -s -i \
+RESPONSE_CODE=$(curl -s -i \
   -o /dev/null \
   -w "%{http_code}" \
   -X POST \
@@ -29,3 +29,6 @@ curl -s -i \
     "title": "Merge '"$BRANCH"' into DMZ",
     "draft": "true"
   }'
+)
+
+echo "RESPONSE_CODE: $RESPONSE_CODE"
