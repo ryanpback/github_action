@@ -42,8 +42,7 @@ if [ "$RESPONSE_CODE" = "422" ]; then
   PULLS=$(curl \
     -H "Accept: application/vnd.github.v3+json" \
     -H "authorization: Bearer $TOKEN" \
-    "$GITHUB_API/repos/$REPO/pulls?head=$BRANCH&base=dmz" \
-    | jq '.'
+    "$GITHUB_API/repos/$REPO/pulls?head=$BRANCH&base=dmz"
   )
 
   echo $PULLS
