@@ -33,4 +33,12 @@ RESPONSE_CODE=$(curl -s -i \
 
 echo "Response Code: $RESPONSE_CODE"
 
-# if [ "$RESPONSE_C" ]
+if [ "$RESPONSE_CODE" = "201" ]; then
+  echo "Pull Request from $BRANCH into DMZ successfully created."
+  exit 0
+fi
+
+if [ "$RESPONSE_CODE" = "422" ]; then
+  echo "A pull request from $BRANCH into DMZ already exists."
+  exit 0
+fi
