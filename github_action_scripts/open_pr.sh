@@ -13,11 +13,11 @@ REPO=$2
 BRANCH=$3
 TOKEN=$4
 
-echo -e "\nCreating Pull Request from $BRANCH into DMZ"
+echo -e "\nCreating Pull Request from $BRANCH into DMZ\n"
 
-curl -s -I \
+curl -s -i \
   -o /dev/null \
-  -w "%{http_code}%" \
+  -w "%{http_code}" \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer $TOKEN" \
