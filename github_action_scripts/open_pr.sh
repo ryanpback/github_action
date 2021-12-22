@@ -31,4 +31,6 @@ RESPONSE_CODE=$(curl -s -i \
   }'
 )
 
-echo "RESPONSE_CODE: $RESPONSE_CODE"
+echo "Response Code: $RESPONSE_CODE"
+
+# if [ "$RESPONSE_C" ]
