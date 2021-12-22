@@ -45,6 +45,7 @@ if [ "$RESPONSE_CODE" = "422" ]; then
     "$GITHUB_API/repos/$REPO/pulls?head=$BRANCH&base=dmz"
   )
 
+
   echo $PULLS
   echo "A pull request from $BRANCH into DMZ already exists."
   exit 0
