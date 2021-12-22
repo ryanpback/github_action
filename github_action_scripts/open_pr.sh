@@ -42,3 +42,6 @@ if [ "$RESPONSE_CODE" = "422" ]; then
   echo "A pull request from $BRANCH into DMZ already exists."
   exit 0
 fi
+
+echo "Something went wrong creating the pull request. Please create a pull request merging $BRANCH into DMZ"
+exit 1
